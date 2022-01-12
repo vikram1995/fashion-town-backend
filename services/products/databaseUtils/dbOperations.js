@@ -44,4 +44,13 @@ const updateData = async (where, set) => {
   });
 };
 
-export {insertData, findData, updateData}
+const SearchData = async (querySyntax) => {
+  try {
+    const p = await col.aggregate(querySyntax);
+    console.log(p);
+  } catch (error) {
+    console.log(error)
+  }
+};
+
+export { insertData, findData, updateData, SearchData };

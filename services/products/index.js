@@ -5,10 +5,15 @@ import { dbConnect } from "./databaseUtils/dbConnection";
 import resolvers from "./resolvers";
 import typeDefs from "./schema";
 
-const { PORT = 5002 } = process.env;
+const { PORT = 5001 } = process.env;
 
 async function initServer() {
-  await dbConnect();
+  try {
+    await dbConnect();
+  } catch (error) {
+    console.log(error)
+  }
+  
   const server = new ApolloServer({
     schema: buildFederatedSchema([{ typeDefs, resolvers }]),
   });

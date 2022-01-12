@@ -9,17 +9,37 @@ export default gql`
     brand: String
     images: [String]
     title: String
+    price: String
     dominant_color: String
+    ideal_for: String
+    product_type: String
+    product_category: String
+    product_details: String
+    size_fit: String
+    care_instructions: String
+    inventory: String
+    is_in_stock: String
+    listed_date: String
   }
 
   type Query {
-    product(product_id: String): Product
+    productById(product_id: String): Product
+    productBySearchInput(searchInput: String) : [Product]
     products: [Product]
     productByFilters(
-      brand: String
-      dominant_color: String
-      category: String
-      idealFor: String
+      product_id: String
+      brand: [String]
+      title: String
+      price: String
+      dominant_color: [String]
+      ideal_for: [String]
+      product_type: String
+      product_category: [String]
+      product_details: String
+      care_instructions: String
+      inventory: String
+      is_in_stock: String
+      listed_date: String
     ): [Product]
   }
 `;
