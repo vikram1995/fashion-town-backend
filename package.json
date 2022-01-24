@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "gateway.js",
-  "scripts": {
+  "scripts": { 
+    "start-service-products": "babel-node services/products/index.js",
     "start-service-api-gateway": "babel-node gateway.js",
-    "start-service-user-api": "babel-node services/user-api/index.js",
     "start-services": "concurrently \"npm:start-service-*\""
   },
   "devDependencies": {

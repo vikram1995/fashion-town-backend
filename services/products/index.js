@@ -14,13 +14,15 @@ async function initServer() {
     console.log(error)
   }
   
-  const server = new ApolloServer({
-    schema: buildFederatedSchema([{ typeDefs, resolvers }]),
-  });
-
-  //Start server
-  server.listen({ port: PORT }).then(({ url }) => {
-    console.log(`🚀 Server ready at ${url}`);
-  });
+ 
 }
+
+ const server = new ApolloServer({
+   schema: buildFederatedSchema([{ typeDefs, resolvers }]),
+ });
+
+ //Start server
+ server.listen({ port: PORT }).then(({ url }) => {
+   console.log(`🚀 Server ready at ${url}`);
+ });
 initServer();
