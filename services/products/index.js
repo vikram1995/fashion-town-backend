@@ -5,8 +5,8 @@ import { dbConnect } from "./databaseUtils/dbConnection";
 import resolvers from "./resolvers";
 import typeDefs from "./schema";
 
-// const { PORT = 5001 } = process.env;
-const PORT = 5001
+const { PORT = 5001 } = process.env;
+
 async function initServer() {
   try {
     await dbConnect();
