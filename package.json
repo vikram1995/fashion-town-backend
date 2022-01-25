@@ -4,7 +4,7 @@
   "description": "",
   "main": "gateway.js",
   "scripts": {
-    "start-api-gateway": "babel-node gateway.js",
+    "start-service-api-gateway": "babel-node gateway.js",
     "start-service-products": "babel-node services/products/index.js",
     "start-services": "concurrently \"npm:start-service-*\""
   },
