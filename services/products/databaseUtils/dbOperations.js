@@ -44,12 +44,18 @@ const updateData = async (where, set) => {
   });
 };
 
-const SearchData = async (querySyntax) => {
+const SearchData = async (pipeline) => {
   try {
-    const p = await col.aggregate(querySyntax);
-    console.log(p);
+    console.log(pipeline)
+    const cursor = await col.aggregate(pipeline);
+    const searchResult = [];
+    await cursor.forEach((product) => {
+      searchResult.push(product)
+    });
+    console.log(searchResult.length)
+    return searchResult;
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 };
 

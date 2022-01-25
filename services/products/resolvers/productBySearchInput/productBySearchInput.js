@@ -1,10 +1,11 @@
 import { SearchData } from "../../databaseUtils/dbOperations";
 
-const getQuerySyntax = (searchInput) => {
+const getPipeline = (searchInput) => {
+  console.log(searchInput);
   return [
     {
       $search: {
-        index: "default",
+        index: "searchProducts",
         text: {
           query: searchInput,
           path: {
@@ -17,10 +18,10 @@ const getQuerySyntax = (searchInput) => {
 };
 
 export async function productBySearchInput(searchInput) {
-    const querySyntax = getQuerySyntax(searchInput.searchInput)
-    console.log(querySyntax)
+  const pipeline = getPipeline(searchInput.searchInput);
+  console.log(pipeline);
   try {
-    const data = await SearchData(querySyntax);
+    const data = await SearchData(pipeline);
     return data;
   } catch (error) {
     console.log(error);

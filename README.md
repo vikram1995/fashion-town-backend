@@ -1,1 +1,1 @@
-# fashion-town-backend
+# NINJA-TEMPLATE

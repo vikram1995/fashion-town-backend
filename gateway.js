@@ -9,7 +9,8 @@ const { PORT = 4000 } = process.env;
     // user and wallets api
     const gateway = new ApolloGateway({
       serviceList: [
-        { name: 'products', url: 'http://localhost:5001' }
+        { name: 'products', url: 'http://localhost:5001' },
+        { name: 'order', url: 'http://localhost:5002' }
       ],
     });
   

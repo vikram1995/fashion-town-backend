@@ -4,8 +4,9 @@
   "description": "",
   "main": "gateway.js",
   "scripts": {
-    "start-service-api-gateway": "babel-node gateway.js",
     "start-service-products": "babel-node services/products/index.js",
+    "start-service-order": "babel-node services/order/index.js",
+    "start-service-api-gateway": "babel-node gateway.js",
     "start-services": "concurrently \"npm:start-service-*\""
   },
   "devDependencies": {
@@ -19,10 +20,12 @@
   "dependencies": {
     "@apollo/gateway": "^0.13.2",
     "apollo-server": "^2.11.0",
-    "dotenv": "^8.2.0",
+    "dotenv": "^8.6.0",
     "graphql": "^14.6.0",
+    "moment": "^2.29.1",
     "mongodb": "^4.2.1",
-    "moment": "^2.29.1"
+    "mongoose": "^6.1.6",
+    "nodemailer": "^6.7.2"
   },
   "keywords": [],
   "author": "",
