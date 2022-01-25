@@ -1,1 +1,1 @@
-web: npm i
+web: cd services/order && npm start
