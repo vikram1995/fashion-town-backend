@@ -1,1 +1,1 @@
-web: cd services/order && npm start
+web: cd services/products && npm start
