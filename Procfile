@@ -1,1 +1,1 @@
-web: cd services/products && npm start
+web: npm run start-service-products
