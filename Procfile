@@ -1,1 +1,1 @@
-web: npm run start-service-products
+web: npm run start-services
